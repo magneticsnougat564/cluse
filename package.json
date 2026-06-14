@@ -10,7 +10,7 @@
     "start": "electron .",
     "usage": "node tui.js",
     "test": "node --test",
-    "build": "electron-builder --win"
+    "build": "electron-builder --win --publish never"
   },
   "dependencies": {
     "chokidar": "^3.6.0"
