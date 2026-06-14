@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:;" />
+  <title>Cluse Usage</title>
+  <link rel="stylesheet" href="fonts/fonts.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- the whole window is a CRT terminal housing -->
+  <div class="housing">
+    <span class="screw tl"></span><span class="screw tr"></span>
+    <span class="screw bl"></span><span class="screw br"></span>
+
+    <div class="bezel-top">
+      <span class="badge">CLUSE&#8209;VT220 <em>// USAGE</em></span>
+      <span class="led" id="led" title="LIVE"></span>
+    </div>
+
+    <!-- recessed amber-phosphor glass -->
+    <div class="glass">
+      <div class="scanlines" aria-hidden="true"></div>
+      <div class="grain" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
+
+      <div class="screen">
+        <div class="live" id="live"><span class="d"></span>LIVE</div>
+
+        <section class="stats">
+          <div class="stat">
+            <div class="val" id="totTokens">----</div>
+            <div class="lbl">tokens</div>
+          </div>
+          <div class="rule"></div>
+          <div class="stat">
+            <div class="val" id="totCost">----</div>
+            <div class="lbl">cost&nbsp;usd</div>
+          </div>
+          <div class="rule"></div>
+          <div class="stat">
+            <div class="val" id="totGroups">--</div>
+            <div class="lbl" id="totGroupsLbl">projects</div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="seg" id="range">
+            <button data-range="today" class="active">TODAY</button>
+            <button data-range="7d">7D</button>
+            <button data-range="30d">30D</button>
+            <button data-range="all">ALL</button>
+          </div>
+          <div class="seg" id="group">
+            <button data-group="project" class="active">PROJ</button>
+            <button data-group="session">SESS</button>
+          </div>
+          <div class="search">
+            <input id="search" type="text" placeholder="search" spellcheck="false" />
+            <span class="cursor" aria-hidden="true"></span>
+          </div>
+          <div class="model" id="modelWrap">
+            <button id="modelBtn" class="model-btn">MODEL:<b>ALL</b> <span class="caret">&#9662;</span></button>
+            <div class="model-menu" id="modelMenu" hidden></div>
+          </div>
+          <button id="costToggle" class="key lit" title="toggle cost">COST</button>
+        </section>
+
+        <main id="rows" class="rows"></main>
+        <footer class="foot"><span id="updated">&mdash;</span></footer>
+      </div>
+    </div>
+
+    <div class="bezel-bottom">
+      <span class="vents" aria-hidden="true"></span>
+      <span class="dial" title="brightness"></span>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

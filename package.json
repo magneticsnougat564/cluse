@@ -1,0 +1,29 @@
+{
+  "name": "cluse-usage",
+  "version": "1.0.0",
+  "description": "Live monitor for Claude Code token usage — amber-CRT desktop app + terminal TUI",
+  "author": "RRASH111",
+  "license": "MIT",
+  "main": "main.js",
+  "bin": { "cluse": "tui.js", "cluse-usage": "tui.js" },
+  "scripts": {
+    "start": "electron .",
+    "usage": "node tui.js",
+    "test": "node --test",
+    "build": "electron-builder --win"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.rani.cluse",
+    "productName": "Cluse",
+    "files": ["main.js", "preload.js", "src/**", "renderer/**"],
+    "win": { "target": "nsis" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true }
+  }
+}
